@@ -58,6 +58,7 @@ class Pages extends Component{
             integrity=""
           ></script>
           <script src="/static/js/mixitup.min.js"></script>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v8.0" nonce="zxaabMwO"></script>
         </Head>
         <Header />
         <main>
