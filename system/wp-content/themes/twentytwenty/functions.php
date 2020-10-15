@@ -779,3 +779,26 @@ function prepare_restful_categories($data, $post, $context) {
     return $data;
 }
 add_filter('rest_prepare_category', 'prepare_restful_categories', 10, 3);
+
+add_filter( "rest_post_query", function( $args, $request){
+	if ( isset( $request['category_name']) && !empty($request['category_name'] ) ) {
+		$args['category_name'] = $request['category_name'];
+	}
+	return $args;
+}, 10, 2);
+
+
+add_filter( "rest_post_collection_params", function($query_params, $post_type){
+	$query_params[ 'category_name' ] = array(           
+		'description' => __( 'Category name.' ),
+		'type'        => 'string',
+		'readonly'    => true,
+	);
+	return $query_params;
+}, 10, 2);
+add_filter( 'rest_prepare_post', 'dt_use_raw_post_content', 10, 3 );
+function dt_use_raw_post_content( $data, $post, $request ) {
+	$data->data['title']['plaintext'] = $post->post_title;
+    $data->data['content']['plaintext'] = $post->post_content;
+    return $data;
+}
