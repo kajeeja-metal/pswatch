@@ -1,13 +1,12 @@
-import Document, { Head, Main, NextScript,Html } from 'next/document'
-import '../public/static/css/styles.css'
-import '../public/static/sass/style.scss'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
 
 class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
-        <body >
+        <Head />
+        <body>
           <Main />
           <NextScript />
         </body>
