@@ -780,6 +780,15 @@ function prepare_restful_categories($data, $post, $context) {
 }
 add_filter('rest_prepare_category', 'prepare_restful_categories', 10, 3);
 
+function prepare_restful_page($data, $post, $context) {
+	$_data = $data->data;
+	$img_full = get_the_post_thumbnail_url( $data->ID, 'full' );
+	$_data['images'] = $img_full;
+	$data->data = $_data;
+	return $data;
+}
+add_filter('rest_prepare_page', 'prepare_restful_page', 10, 3);
+
 add_filter( "rest_post_query", function( $args, $request){
 	if ( isset( $request['category_name']) && !empty($request['category_name'] ) ) {
 		$args['category_name'] = $request['category_name'];
@@ -798,7 +807,31 @@ add_filter( "rest_post_collection_params", function($query_params, $post_type){
 }, 10, 2);
 add_filter( 'rest_prepare_post', 'dt_use_raw_post_content', 10, 3 );
 function dt_use_raw_post_content( $data, $post, $request ) {
+	$_data = $data->data;
+	$categories = get_the_category( $_data['id'] );
+	foreach ($categories as $category) {
+		if($category->cat_ID != 9){
+			$object = [
+				'id' => $category->cat_ID,
+				'category_name' => $category->name,
+				'slug' => $category->slug,
+			];
+			$formatted_categories[] = $object;
+		}
+    }
+	$data->data['categories_group'] = $formatted_categories;
 	$data->data['title']['plaintext'] = $post->post_title;
     $data->data['content']['plaintext'] = $post->post_content;
     return $data;
+}
+add_filter( 'user_can_richedit', 'wpse_58501_page_can_richedit' );
+
+function wpse_58501_page_can_richedit( $can ) 
+{
+    global $post;
+
+    if ( 28 == $post->ID )
+        return false;
+
+    return $can;
 }
