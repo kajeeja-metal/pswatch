@@ -4,7 +4,7 @@ import react, { Component } from "react"
 import Link from 'next/link';
 import  Router  from 'next/router'
 import { getPages } from '../../service/Pageservice'
-import { getCategory } from '../../service/Productservice'
+import { getCategory,getleftCategory } from '../../service/Productservice'
 class Category extends Component {
     constructor(props){
         super(props)
@@ -78,6 +78,7 @@ class Category extends Component {
 }
 Category.getInitialProps = async (ctx) => {
     const sectionNew = await getCategory(ctx.query.slug)
+    getleftCategory()
     return {
       category: sectionNew,
     }
