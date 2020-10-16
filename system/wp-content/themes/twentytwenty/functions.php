@@ -809,6 +809,7 @@ add_filter( 'rest_prepare_post', 'dt_use_raw_post_content', 10, 3 );
 function dt_use_raw_post_content( $data, $post, $request ) {
 	$_data = $data->data;
 	$categories = get_the_category( $_data['id'] );
+	$img_full = get_the_post_thumbnail_url( $data->ID, 'full' );
 	foreach ($categories as $category) {
 		if($category->cat_ID != 9){
 			$object = [
@@ -818,7 +819,8 @@ function dt_use_raw_post_content( $data, $post, $request ) {
 			];
 			$formatted_categories[] = $object;
 		}
-    }
+	}
+	$data->data['images'] = $img_full;
 	$data->data['categories_group'] = $formatted_categories;
 	$data->data['title']['plaintext'] = $post->post_title;
     $data->data['content']['plaintext'] = $post->post_content;
@@ -834,4 +836,11 @@ function wpse_58501_page_can_richedit( $can )
         return false;
 
     return $can;
+}
+add_filter( 'rest_post_collection_params', 'my_prefix_add_rest_orderby_params', 10, 1 );
+
+function my_prefix_add_rest_orderby_params( $params ) {
+    $params['orderby']['enum'][] = 'menu_order';
+
+    return $params;
 }

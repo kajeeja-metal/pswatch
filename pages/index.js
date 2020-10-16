@@ -17,7 +17,6 @@ class Home extends Component {
   }
   render() {
     const {newarrivals} = this.props
-    console.log(newarrivals)
     return (
       <Pages>
         <section className="block-1 py-4" style={{ backgroundImage: 'url('+this.props.banner.images+')' }}  dangerouslySetInnerHTML={this.rawMarkup(this.props.banner.content.rendered)}/>
@@ -309,7 +308,7 @@ class Home extends Component {
 Home.getInitialProps = async (ctx) => {
   const sectionWarranty = await getPages(34)
   const sectionBanner = await getPages(30)
-  const sectionNew = await getCategory(9)
+  const sectionNew = await getCategory('new-arrivals')
   return {
     warranty: sectionWarranty,
     banner: sectionBanner,
