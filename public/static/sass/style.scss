@@ -129,6 +129,10 @@ main {
 
 // --------------
 .search-bar {
+    form{
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
 }
 .category-menu {
     ul {
