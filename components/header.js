@@ -21,10 +21,10 @@ class Header extends Component {
                                 <Link href="/"><div className="nav-item text-warning">Call 062-429-2968</div></Link>
                             </div>
                             <div className="icon-menu_wrapper">
-                                <div className="icon-menu" onclick="">
-                                    <div class="bar1"></div>
-                                    <div class="bar2"></div>
-                                    <div class="bar3"></div>
+                                <div className="icon-menu" >
+                                    <div className="bar1"></div>
+                                    <div className="bar2"></div>
+                                    <div className="bar3"></div>
                                 </div>
                             </div>
 
