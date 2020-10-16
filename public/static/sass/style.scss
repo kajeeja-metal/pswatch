@@ -161,4 +161,8 @@ main {
         }
     } 
 }
-
+@media(max-width:992px){
+    .result-Category_wrapper{
+        flex-direction: column-reverse;
+    }
+}

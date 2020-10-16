@@ -16,7 +16,7 @@ class Category extends Component {
           </div>
         </section>
         <div className="container">
-          <div className="row">
+          <div className="row result-Category_wrapper">
 
             <Leftbar />
             <div className="col-md-12 col-lg-8 px-0">
