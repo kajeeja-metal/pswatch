@@ -43,23 +43,23 @@ class Category extends Component {
                                 {
                                     category.items.length != 0 && category.items.map((items,i)=>{
                                     return (
-                                    <div className={"mb-4 " + (i === 0 ? "col-md-12": "col-md-6")}>
+                                    <div className={"mb-4 " + (i === 0 ? "col-md-12": "col-md-6")} key={i}>
                                         <div className="row">
-                                            <div class="col-md-12 text-center">
+                                            <div className="col-md-12 text-center">
                                                 <img className="w-100" src={items.images} />
                                             </div>
-                                            <div class="col-md-12 align-self-center">
+                                            <div className="col-md-12 align-self-center">
                                                 <div className="detail-product p-3">
-                                                    <div class="hashtag-group">
+                                                    <div className="hashtag-group">
                                                         {
                                                             items.categories_group !== null && items.categories_group.map((items,i)=>{
-                                                            return <Link href={`/category/[slug]`} as={`/category/${items.slug}/`} passHref><span>{items.category_name}</span></Link>
+                                                            return <Link href={`/category/[slug]`} as={`/category/${items.slug}/`} key={i} passHref><a href=""><span>{items.category_name}</span></a></Link>
                                                             })
                                                         }
                                                     </div>
                                                     <h2 className="mb-2" dangerouslySetInnerHTML={this.rawMarkupremove(items.title.rendered)}/>
                                                     <div className="mb-3 block-descript" dangerouslySetInnerHTML={this.rawMarkupremove(items.content.plaintext)}/>
-                                                    <button type="button" class="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                                                    <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
                                                 </div>
                                             </div>
                                         </div>
