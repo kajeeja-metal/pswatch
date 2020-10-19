@@ -7,43 +7,41 @@ class Home extends Component {
   constructor(props) {
     super(props)
   }
-  rawMarkupremove(e){
-      var rawMarkup = e
-      return { __html: rawMarkup.replace(/\n/g, '') };
+  rawMarkupremove(e) {
+    var rawMarkup = e
+    return { __html: rawMarkup.replace(/\n/g, '') };
   }
   rawMarkup(detail) {
     var rawMarkup = detail
     return { __html: rawMarkup };
   }
   render() {
-    const {newarrivals} = this.props
+    const { newarrivals } = this.props
     return (
       <Pages>
-        <section className="block-1 py-4" style={{ backgroundImage: 'url('+this.props.banner.images+')' }}  dangerouslySetInnerHTML={this.rawMarkup(this.props.banner.content.rendered)}/>
+        <section className="block-1 py-4" style={{ backgroundImage: 'url(' + this.props.banner.images + ')' }} dangerouslySetInnerHTML={this.rawMarkup(this.props.banner.content.rendered)} />
         <section className="block-2 py-4" dangerouslySetInnerHTML={this.rawMarkup(this.props.warranty.content.rendered)} />
         <section className="block-3 py-4">
+          <div className="title-section text-center pb-5 ">
+            <h1 className="text-dark bg-white py-3">{newarrivals.name}</h1>
+          </div>
           <div className="container">
-            <div className="row ">
-              <div className="title-section col-12 text-center pb-5 ">
-                <h1 className="text-dark bg-white py-3">{newarrivals.name}</h1>
-              </div>
-            </div>
             <div className="row new-product_group">
               {
-                newarrivals.items.length != 0 && newarrivals.items.map((items,i)=>{
+                newarrivals.items.length != 0 && newarrivals.items.map((items, i) => {
                   return (
-                  <div className={"mb-4 " + (i === 0 ? "col-md-12": "col-md-6")}>
-                    <div className="row">
-                      <div className="col-md-6 text-center">
-                        <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
+                    <div className={"mb-4 " + (i === 0 ? "col-md-12" : "col-md-6")}>
+                      <div className="row">
+                        <div className="col-md-6 text-center">
+                          <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
+                        </div>
+                        <div className="col-md-6 align-self-center py-3">
+                          <h2 className="mb-4" dangerouslySetInnerHTML={this.rawMarkupremove(items.excerpt.rendered)} />
+                          <p className="mb-3" dangerouslySetInnerHTML={this.rawMarkupremove(items.title.plaintext)} />
+                          <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                        </div>
                       </div>
-                      <div className="col-md-6 align-self-center py-3">
-                        <h2 className="mb-4" dangerouslySetInnerHTML={this.rawMarkupremove(items.excerpt.rendered)}/>
-                        <p className="mb-3" dangerouslySetInnerHTML={this.rawMarkupremove(items.title.plaintext)}/>
-                        <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
-                      </div>
-                    </div>
-                  </div> )
+                    </div>)
                 })
               }
             </div>
@@ -51,12 +49,10 @@ class Home extends Component {
         </section>
 
         <section className="block-3 py-4">
-          <div className="container">
-            <div className="row ">
-              <div className="title-section col-12 text-center pb-5 ">
+        <div className="title-section text-center pb-5 ">
                 <h1 className="text-dark bg-white py-3">Accessory</h1>
               </div>
-            </div>
+          <div className="container">
             <div className="row">
               <div className="col-md-6 mb-4">
                 <div className="row">

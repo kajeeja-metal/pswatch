@@ -6,13 +6,9 @@ class Category extends Component {
   render() {
     return (
       <Pages>
-        <section className="result-Category py-3">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 text-center">
-                <h3 className="text-dark bg-white py-2">CATEGORY: CHARRIOL</h3>
-              </div>
-            </div>
+        <section className="result-Category  py-3">
+          <div className=" text-center">
+            <h3 className="bg-white text-dark py-2">CATEGORY: CHARRIOL</h3>
           </div>
         </section>
         <div className="container">

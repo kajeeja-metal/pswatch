@@ -3,13 +3,13 @@ import Link from 'next/link';
 class Leftbar extends Component {
     render() {
         return (
-            <div className="col-md-12 col-lg-4">
+            <div className="col-md-12 col-lg-3">
                 <section className="search-bar p-3 bg-white text-dark py-2 mb-3">
                     <div className="container">
                         <div className="row">
                             <form className="form-inline my-2 my-lg-0">
                                 <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -53,14 +53,14 @@ class Leftbar extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 text-center">
-                                <h4>PJ WATCH ร้านรับซื้อนาฬิกา ขายนาฬิกา-แลกเปลี่ยน นาฬิกามือสอง แบรนด์เนม Hi-End ทุกรุ่น ทุกยี่ห้อ ไม่ว่าจะเป็นรับซื้อ rolex, AP, Breitling, Corum, Cartier,  Franck Muller, Hublot, IWC, JLC, Omega, Oris, Panerai, Patek-Philippe, Tag Heuer, Zenith และแบรนด์ดังอื่นๆ อีกมากมาย มาหาเราได้เลย เราให้ราคาสูง สมเหตุสมผลตามราคาท้องตลาด วิเคราะห์แบบมืออาชีพ</h4>
+                                <h5>PJ WATCH ร้านรับซื้อนาฬิกา ขายนาฬิกา-แลกเปลี่ยน นาฬิกามือสอง แบรนด์เนม Hi-End ทุกรุ่น ทุกยี่ห้อ ไม่ว่าจะเป็นรับซื้อ rolex, AP, Breitling, Corum, Cartier,  Franck Muller, Hublot, IWC, JLC, Omega, Oris, Panerai, Patek-Philippe, Tag Heuer, Zenith และแบรนด์ดังอื่นๆ อีกมากมาย มาหาเราได้เลย เราให้ราคาสูง สมเหตุสมผลตามราคาท้องตลาด วิเคราะห์แบบมืออาชีพ</h5>
                                 <br />
                                 <p>ในส่วนสินค้าของเราก็คัดมาในสภาพเหมือนของใหม่ สวยๆทุกเรือน ให้ทุกท่านได้ประทับใจ โดยทุกเรือนเรารับประกันคุณภาพ เป็นสินค้ามือสองที่ราคาย่อมเยาว์ และให้บริการแนะนำและดูแลทุกท่าน อย่างมืออาชีพ ไม่ทอดทิ้งกันหลังการขายแน่นอน เรามีบริการให้คำปรึกษา 24 ชม. มีบริการจัดส่งถึงบ้านด้วยตัวเราเองทั้งในกรุงเทพฯ และต่างจังหวัด เพื่อให้ท่านลูกค้าได้รับความสะดวกมากขึ้น หรือจะเดินทางมาที่ร้าน PJ-WATCH ที่ศูนย์การค้า The Up พระราม 3 ชั้น 2 ข้างบันไดทางขึ้น เราดูแลเองทุกขั้นตอน รับประกันสินค้าทุกชิ้น รับซื่อคืนทุกเรือน อยากขาย อยากซื้อ อยากเปลี่ยน โทรปรึกษาเราก่อนบริการด้วยใจไม่กดราคา ไม่กดดันให้ขายสนใจโทรหาเราได้เลยที่</p>
                                 <br />
-                                <h4>062-429-2968  (คุณโย)</h4>
-                                <h4>ช่องทางติดตามเราได้ที่</h4>
+                                <h5>062-429-2968  (คุณโย)</h5>
+                                <h5>ช่องทางติดตามเราได้ที่</h5>
                                 <h5>www.pj-watch.com</h5>
-                                <h5>www.facebook.com/pjwatchbra</h5>
+                                <a href=""><h5>www.facebook.com/pjwatchbra</h5></a> 
                                 <p>Instrgram: pjwatch</p>
                                 <br />
                                 <p>ID line: @pjwatch (มี @ ด้วย)</p>

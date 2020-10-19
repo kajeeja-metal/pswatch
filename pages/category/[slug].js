@@ -24,11 +24,11 @@ class Category extends Component {
         const {category} = this.props
         return (
         <Pages>
-            <section className="result-Category py-3">
+            <section className="result-Category bg-white my-3">
             <div className="container">
                 <div className="row">
                 <div className="col-12 text-center">
-                    <h3 className="text-dark bg-white py-2">CATEGORY: {category.name}</h3>
+                    <h3 className="text-dark  py-2">CATEGORY: {category.name}</h3>
                 </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ class Category extends Component {
             <div className="container">
                 <div className="row result-Category_wrapper">
                     <Leftbar />
-                    <div className="col-md-12 col-lg-8 px-0">
+                    <div className="col-md-12 col-lg-9 px-0">
                         <section className="block-8">
                             <div className="container">
                                 <div className="row new-product_group">

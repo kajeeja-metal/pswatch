@@ -85,7 +85,7 @@ main {
         background-color: #fff;
         color: #000;
         text-align: center;
-        div.block-descript{
+        div.block-descript {
             @include ellipsis(3);
         }
     }
@@ -100,7 +100,7 @@ main {
             bottom: 0;
             height: 4px;
             left: 50%;
-            transform: translate(-50%,0);
+            transform: translate(-50%, 0);
             width: 50%;
         }
         span {
@@ -129,9 +129,13 @@ main {
 
 // --------------
 .search-bar {
-    form{
+    form {
         display: grid;
         grid-template-columns: 1fr auto;
+        width: 100%;
+    }
+    input {
+        width: 100% !important;
     }
 }
 .category-menu {
@@ -152,17 +156,77 @@ main {
         padding-left: 0;
     }
 }
-.tag-cloud{
-    button{
+.category-content {
+    word-break: break-word;
+}
+
+.tag-cloud {
+    button {
         margin-right: 10px;
         margin-bottom: 10px;
-        &:last-child{
+        &:last-child {
             margin-right: 0;
         }
-    } 
+    }
 }
-@media(max-width:992px){
-    .result-Category_wrapper{
+.postdetail_nav-links {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 20px;
+
+    .postdetail_nav-links_wrapper {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+    }
+    a {
+        display: inline-block;
+        padding: 20px ;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color: #dd5252;
+        }
+    }
+    .nav-previous {
+        text-align: left;
+        border-right: 1px solid #eaeaea;
+    }
+    .nav-next {
+        text-align: right;
+    }
+}
+.related-posts{
+    background-color: #fff;
+    .related-posts_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 10px 20px 10px;
+    }
+    .related-posts-item{
+        width: 33.33%;
+        padding: 0 5px;
+    }
+    a{
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color: #dd5252;
+        }
+    }
+    .p-name{
+        margin-top: 10px;
+        line-height: 1.2;
+        @include ellipsis(3)
+    }
+}
+@media (max-width: 992px) {
+    .result-Category_wrapper {
+        flex-direction: column-reverse;
+    }
+    .postdetail_wrapper{
         flex-direction: column-reverse;
     }
 }
