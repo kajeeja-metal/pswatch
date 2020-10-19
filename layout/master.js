@@ -12,6 +12,7 @@ class Pages extends Component{
         <Head>
             <title>PJ Watch</title>
             <link rel="icon" href="/favicon.png" />
+            <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet"></link>
           <link
             href="/static/css/font-awesome.css"
             rel="stylesheet"
