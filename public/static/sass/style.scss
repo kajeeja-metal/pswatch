@@ -3,15 +3,14 @@
 @import "_Footer.scss";
 @import "about-us.scss";
 
-
-body{
-    font-family: 'Mitr', sans-serif;
+body {
+    font-family: "Mitr", sans-serif;
 }
 main {
     min-height: calc(100vh - 132px);
     position: relative;
     margin-top: 76px;
-    background-color: #000;
+    background-color: #0b0b0b;
     color: #fff;
 }
 .block-1 {
@@ -142,7 +141,11 @@ main {
         width: 100%;
     }
     input {
+        border-radius: unset;
         width: 100% !important;
+    }
+    button {
+        border-radius: unset;
     }
 }
 .category-menu {
@@ -154,6 +157,7 @@ main {
             justify-content: space-between;
             color: #000;
             text-decoration: none;
+            font-size: 13px;
             &:hover {
                 color: rgb(82, 82, 82);
             }
@@ -165,6 +169,9 @@ main {
 }
 .category-content {
     word-break: break-word;
+    a {
+        color: inherit;
+    }
 }
 
 .tag-cloud {
@@ -189,7 +196,7 @@ main {
     }
     a {
         display: inline-block;
-        padding: 20px ;
+        padding: 20px;
         text-decoration: none;
         color: #000;
         &:hover {
@@ -204,18 +211,18 @@ main {
         text-align: right;
     }
 }
-.related-posts{
+.related-posts {
     background-color: #fff;
-    .related-posts_wrapper{
+    .related-posts_wrapper {
         display: flex;
         flex-wrap: wrap;
         padding: 0 10px 20px 10px;
     }
-    .related-posts-item{
+    .related-posts-item {
         width: 33.33%;
         padding: 0 5px;
     }
-    a{
+    a {
         text-align: center;
         text-decoration: none;
         color: #000;
@@ -223,36 +230,130 @@ main {
             color: #dd5252;
         }
     }
-    .p-name{
+    .p-name {
         margin-top: 10px;
         line-height: 1.2;
-        @include ellipsis(3)
+        @include ellipsis(3);
     }
 }
-.group-brandName{
+.group-brandName {
     background-color: #fff;
-    .brandName-item{
+    .brandName-item {
         text-decoration: none;
         color: #000;
         padding: 20px;
         text-align: center;
         transition: 0.3s;
-        img{
+        img {
             max-width: 200px;
             max-height: 200px;
             margin-bottom: 10px;
         }
-        &:hover{
-            box-shadow: 0 0 25px 0 rgba(0,0,0,.16);
+        &:hover {
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.16);
         }
     }
-    
 }
+.about-us {
+    .gruop-btnlink {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+    }
+    .btnlink-item {
+        background-color: #3eb800;
+        color: #fff;
+        border-radius: 30px;
+        font-size: 22px;
+        padding: 10px 20px;
+        margin: 0 10px;
+    }
+    .gruop-btnSocial {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+    .btnSocial-item {
+        background-color: #4054b2;
+        color: #fff;
+        font-size: 35px;
+        margin: 0 10px;
+        width: 100px;
+        height: 100px;
+        display: grid;
+        place-content: center;
+    }
+    .btnContact_wrapper {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px 0;
+    }
+    .btnContact_col {
+        text-align: center;
+    }
+}
+
+
 @media (max-width: 992px) {
     .result-Category_wrapper {
         flex-direction: column-reverse;
     }
-    .postdetail_wrapper{
+    .postdetail_wrapper {
         flex-direction: column-reverse;
+    }
+    .about-us .btnlink-item {
+        font-size: 16px;
+    }
+    .about-us .txt-title {
+        font-size: 20px;
+    }
+    .about-us .btnSocial-item {
+        width: 70px;
+        height: 70px;
+    }
+}
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .block-3 h2 {
+        margin-bottom: 10px !important;
+    }
+    .block-4 .poppular-group h2 {
+        font-size: 25px;
+    }
+    .block-3 .title-section {
+        padding-bottom: 1rem !important;
+    }
+    .block-2 {
+        .circle-icon {
+            margin-bottom: 1rem !important;
+        }
+        .warranty-item {
+            margin-bottom: 1.5rem !important;
+            h3 {
+                font-size: 20px;
+                margin-bottom: 5px !important;
+            }
+        }
+    }
+    .about-us .btnContact_wrapper {
+        display: block;
+    }
+    .btnContact_wrapper .btnContact_col {
+        &:nth-child(n + 2) {
+            margin-top: 25px;
+        }
+    }
+    .about-us .btnlink-item {
+        font-size: 14px;
+    }
+    .about-us .btnSocial-item {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .location_wrapper .map iframe {
+        height: 250px;
     }
 }

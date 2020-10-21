@@ -2,13 +2,17 @@ import Pages from '../layout/master'
 import Leftbar from '../components/left-bar'
 import react, { Component } from "react"
 import Link from 'next/link';
+import { getleftCategory } from '../service/Productservice'
 class Postdetail extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <Pages>
                 <div className="container">
                     <div className="row postdetail_wrapper">
-                        <Leftbar />
+                        <Leftbar sideber={this.props.leftsideber}/>
                         <div className="col-md-12 col-lg-8 px-0">
                             <section className="block-8">
                                 <div className="container">
@@ -86,4 +90,10 @@ class Postdetail extends Component {
         )
     }
 }
+Postdetail.getInitialProps = async (ctx) => {
+    const sectionleft = await getleftCategory()
+    return {
+      leftsideber: sectionleft
+    }
+  }
 export default Postdetail

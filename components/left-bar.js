@@ -17,7 +17,7 @@ class Leftbar extends Component {
                         <div className="row">
                             <form className="form-inline my-2 my-lg-0">
                                 <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fas fa-search"></i></button>
+                                <button className="btn bg-danger my-2 my-sm-0" type="submit"><i className="fas fa-search text-white"></i></button>
                             </form>
                         </div>
                     </div>

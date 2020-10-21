@@ -134,7 +134,7 @@ class Home extends Component {
               <div className="col-md-12 col-lg-6 poppular-group bg-white text-dark py-4">
                 <div className="row">
                   <div className="col-md-12 text-center">
-                    <h2 className="py-5">นาฬิกาแบรนด์ดังรุ่นยอดนิยม</h2>
+                    <h2 className="pb-4">นาฬิกาแบรนด์ดังรุ่นยอดนิยม</h2>
                   </div>
                 </div>
                 <div className="row">
@@ -228,7 +228,7 @@ class Home extends Component {
         <section className="block-6 py-4">
           <div className="container">
             <div className="row">
-              <div className="title-section col-12 text-center pb-5 ">
+              <div className="title-section col-12 text-center  ">
                 <h4 className="text-warning">โปรดตรวจสอบ</h4>
                 <h1 className="text-secondary py-3">แบรนด์นาฬิกา ที่เรารับซื้อเท่านั้น</h1>
               </div>

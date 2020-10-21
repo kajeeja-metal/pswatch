@@ -27,6 +27,66 @@ class Aboutus extends Component {
                             <img src="https://www.pj-watch.com/wp-content/uploads/2020/07/PJ-WATCH-SHOP.webp" />
                         </div>
                     </div>
+                    <div className="container my-4 bg-black">
+                        <div className="btnContact_wrapper">
+                            <div className="btnContact_col">
+                                <h3 className="txt-title text-warning">ติดต่อสอบถามได้หลายช่องทาง</h3>
+                                <div className="gruop-btnlink">
+                                    <Link href="/">
+                                        <a href="" className="btnlink-item">
+                                            <i className="fab fa-line mr-2"></i>
+                                            <span>@PJWATCH</span>
+                                        </a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a href="" className="btnlink-item">
+                                            <i className="fas fa-phone-square-alt mr-2"></i>
+                                            <span>062-429-2968</span>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="btnContact_col">
+                                <div className="gruop-btnSocial">
+                                    <Link href="/">
+                                        <a href="" className="btnSocial-item">
+                                            <i className="fab fa-facebook-f"></i>
+                                        </a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a href="" className="btnSocial-item">
+                                            <i className="fab fa-instagram"></i>
+                                        </a>
+                                    </Link>
+                                </div>
+                                <h3 className="txt-title text-warning">LIKE & FOLLOW US</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container">
+                        <div className="row location_wrapper">
+                            <div className="col-md-6 map">
+                                <div style={{ width: "100%" ,height:"100%"}}>
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        frameBorder={0}
+                                        scrolling="no"
+                                        marginHeight={0}
+                                        marginWidth={0}
+                                        src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=+(pswatch)&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <h3 className="txt-title text-warning mb-3">ร้านเราตั้งอยู่ภายในศูนย์การค้า THE UP ชั้น 2</h3>
+                                <p className="mb-3">The Up พระราม 3 – ตัดหัวมุมถนน นราธิวาสราชนครินทร์ ชั้น 2 ข้างบันไดทางขึ้น เบอร์โทร 062-429-2968 (คุณโย)</p>
+                                <img src="https://www.pj-watch.com/wp-content/uploads/2020/07/PJ-WATCH-TheUp-rama-3-420x280.webp" />
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 

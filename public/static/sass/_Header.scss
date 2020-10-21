@@ -135,6 +135,8 @@ header{
             transform: translateX(-70%);
             opacity: 0;
             transition: 0.3s;
+            visibility: hidden;
+            pointer-events: none;
         }
         .nav-item {
             color: #000;
@@ -154,6 +156,8 @@ header{
         .nav-wrapper{
             transform: translateX(0);
             opacity: 1;
+            visibility: visible;
+            pointer-events: unset;
             transition: 0.3s;
         }
     }
