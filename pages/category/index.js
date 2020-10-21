@@ -22,12 +22,12 @@ class Category extends Component {
 
                     <div className="col-md-12 mb-4 ">
                       <div className="row">
-                        <div class="col-md-12 text-center">
+                        <div className="col-md-12 text-center">
                           <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
                         </div>
-                        <div class="col-md-12 align-self-center">
+                        <div className="col-md-12 align-self-center">
                           <div className="detail-product p-3">
-                            <div class="hashtag-group">
+                            <div className="hashtag-group">
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
@@ -35,7 +35,7 @@ class Category extends Component {
                             </div>
                             <h2 className="mb-2">BVLGARI</h2>
                             <p className="mb-3">BVLGARI Octo Finissimo Extra Thin Manual-winding Skeleton Dial Black Ceramic Men’s Watch</p>
-                            <button type="button" class="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                            <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
                           </div>
                         </div>
                       </div>
@@ -43,12 +43,12 @@ class Category extends Component {
 
                     <div className="col-md-6 mb-4">
                       <div className="row">
-                        <div class="col-md-12 text-center">
+                        <div className="col-md-12 text-center">
                           <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
                         </div>
-                        <div class="col-md-12 align-self-center">
+                        <div className="col-md-12 align-self-center">
                           <div className="detail-product p-3">
-                            <div class="hashtag-group">
+                            <div className="hashtag-group">
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
@@ -56,19 +56,19 @@ class Category extends Component {
                             </div>
                             <h2 className="mb-2">BVLGARI</h2>
                             <p className="mb-3">BVLGARI Octo Finissimo Extra Thin Manual-winding Skeleton Dial Black Ceramic Men’s Watch</p>
-                            <button type="button" class="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                            <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6 mb-4">
                       <div className="row">
-                        <div class="col-md-12 text-center">
+                        <div className="col-md-12 text-center">
                           <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
                         </div>
-                        <div class="col-md-12 align-self-center">
+                        <div className="col-md-12 align-self-center">
                           <div className="detail-product p-3">
-                            <div class="hashtag-group">
+                            <div className="hashtag-group">
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
                               <Link href="/"><span>patek มือสอง</span></Link>
@@ -76,7 +76,7 @@ class Category extends Component {
                             </div>
                             <h2 className="mb-2">BVLGARI</h2>
                             <p className="mb-3">BVLGARI Octo Finissimo Extra Thin Manual-winding Skeleton Dial Black Ceramic Men’s Watch</p>
-                            <button type="button" class="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                            <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
                           </div>
                         </div>
                       </div>

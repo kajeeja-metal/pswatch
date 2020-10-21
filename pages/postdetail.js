@@ -15,12 +15,12 @@ class Postdetail extends Component {
                                     <div className="row">
                                         <div className="col-md-12 mb-4 ">
                                             <div className="row">
-                                                <div class="col-md-12 text-center">
+                                                <div className="col-md-12 text-center">
                                                     <img className="w-100" src="https://www.pj-watch.com/wp-content/uploads/2020/10/Bulgari-Octo-Finissimo-Extra-Thin-Chronograph-GMT-Titatium-42mm-1-420x560.jpg" />
                                                 </div>
-                                                <div class="col-md-12 align-self-center">
+                                                <div className="col-md-12 align-self-center">
                                                     <div className="detail-product p-3">
-                                                        <div class="hashtag-group">
+                                                        <div className="hashtag-group">
                                                             <Link href="/"><span>patek มือสอง</span></Link>
                                                             <Link href="/"><span>patek มือสอง</span></Link>
                                                             <Link href="/"><span>patek มือสอง</span></Link>

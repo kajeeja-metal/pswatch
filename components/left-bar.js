@@ -1,7 +1,15 @@
 import react, { Component } from "react"
 import Link from 'next/link';
 class Leftbar extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            category: this.props.sideber
+        }
+    }
     render() {
+        const { category } = this.state
+        console.log(category)
         return (
             <div className="col-md-12 col-lg-3">
                 <section className="search-bar p-3 bg-white text-dark py-2 mb-3">
@@ -9,7 +17,7 @@ class Leftbar extends Component {
                         <div className="row">
                             <form className="form-inline my-2 my-lg-0">
                                 <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -24,25 +32,28 @@ class Leftbar extends Component {
                         <div className="row">
                             <div className="col-12">
                                 <ul className="category-nav">
-                                    <li>
-                                        <a href="">NEW ARRIVALS<span>50</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="">OUT OF STOCK<span>569</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="">Accessory<span>12</span></a>
-                                        <ul>
-                                            <li><a href="">Buckle<span>5</span></a></li>
-                                            <li><a href="">สายนาฬิกา AP<span>12</span></a></li>
-                                            <li><a href="">สายนาฬิกา Panerai<span>4</span></a></li>
-                                            <li><a href="">สายนาฬิกา Patek<span>1</span></a></li>
-                                            <li><a href="">สายนาฬิกา Rolex1<span>1</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="">ARTICLES<span>2</span></a>
-                                    </li>
+                                    {
+                                        category.map((cat, i) => {
+                                            return (
+                                                <li>
+                                                    <a href="">{cat.name}<span>{cat.count}</span></a>
+                                                    {
+                                                        cat.submenu.length != 0 ?
+                                                            <ul>
+                                                                {
+                                                                    cat.submenu.map((sub, i) => {
+                                                                        return <li><a href="">{sub.name}<span>{sub.count}</span></a></li>
+                                                                    })
+                                                                }
+
+                                                            </ul>
+                                                            :
+                                                            ''
+                                                    }
+                                                </li>
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -60,7 +71,7 @@ class Leftbar extends Component {
                                 <h5>062-429-2968  (คุณโย)</h5>
                                 <h5>ช่องทางติดตามเราได้ที่</h5>
                                 <h5>www.pj-watch.com</h5>
-                                <a href=""><h5>www.facebook.com/pjwatchbra</h5></a> 
+                                <a href=""><h5>www.facebook.com/pjwatchbra</h5></a>
                                 <p>Instrgram: pjwatch</p>
                                 <br />
                                 <p>ID line: @pjwatch (มี @ ด้วย)</p>

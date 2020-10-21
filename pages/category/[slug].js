@@ -10,7 +10,7 @@ class Category extends Component {
         super(props)
     }
     componentDidMount(){
-        // console.log(Router.query.slug)
+
     }
     rawMarkupremove(e){
         var rawMarkup = e
@@ -35,7 +35,7 @@ class Category extends Component {
             </section>
             <div className="container">
                 <div className="row result-Category_wrapper">
-                    <Leftbar />
+                    <Leftbar sideber={this.props.leftsideber} />
                     <div className="col-md-12 col-lg-9 px-0">
                         <section className="block-8">
                             <div className="container">
@@ -78,9 +78,10 @@ class Category extends Component {
 }
 Category.getInitialProps = async (ctx) => {
     const sectionNew = await getCategory(ctx.query.slug)
-    getleftCategory()
+    const sectionleft = await getleftCategory()
     return {
       category: sectionNew,
+      leftsideber: sectionleft
     }
   }
 export default Category

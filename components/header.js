@@ -54,7 +54,7 @@ class Header extends Component {
                                     </li>
                                     <li>
                                         <Link href="/"><a href="" className="nav-item ">Accessory</a></Link>
-                                        <button className={`btn-dd-menu ` + (this.state.dropdownIsOpen ? 'btn-dd-menu_active' : '')} onClick={this.toggleDropdown} ><i class="fas fa-caret-down"></i></button>
+                                        <button className={`btn-dd-menu ` + (this.state.dropdownIsOpen ? 'btn-dd-menu_active' : '')} onClick={this.toggleDropdown} ><i className="fas fa-caret-down"></i></button>
                                         <ul className={`dd-menu ` + (this.state.dropdownIsOpen ? 'dd-menu_active' : '')} >
                                             <li><Link href="/"><a href="" className="dd-menu_item">สายนาฬิกา AP</a></Link></li>
                                             <li><Link href="/"><a href="" className="dd-menu_item">สายนาฬิกา Panerai</a></Link></li>
