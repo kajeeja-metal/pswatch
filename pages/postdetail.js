@@ -25,10 +25,10 @@ class Postdetail extends Component {
                                                 <div className="col-md-12 align-self-center">
                                                     <div className="detail-product p-3">
                                                         <div className="hashtag-group">
-                                                            <Link href="/"><span>patek มือสอง</span></Link>
-                                                            <Link href="/"><span>patek มือสอง</span></Link>
-                                                            <Link href="/"><span>patek มือสอง</span></Link>
-                                                            <Link href="/"><span>patek มือสอง</span></Link>
+                                                            <Link href="/"><a href="">patek มือสอง</a></Link>
+                                                            <Link href="/"><a href="">patek มือสอง</a></Link>
+                                                            <Link href="/"><a href="">patek มือสอง</a></Link>
+                                                            <Link href="/"><a href="">patek มือสอง</a></Link>
                                                         </div>
                                                         <h2 className="mb-2">BVLGARI</h2>
                                                         <p className="mb-3 text-left">เรือนนี้ตัวเคสเป็นเซรามิกสีดำ ขนาด 40mm ด้านหลังเป็นกระจกใสโชว์เครื่อง รุ่นนี้ถูกออกแบบให้มีความบางเป็นพิเศษ หน้าปัด ชั่วโมง นาที วินาที และบอกพลังงานสำรอง สามารถกันน้ำลึกได้ 30 เมตร มาพร้อมกล่องใบรับประกันครบชุดครับ สภาพสวยเหมือนได้ของใหม่</p>
