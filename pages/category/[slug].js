@@ -77,7 +77,7 @@ class Category extends Component {
     }
 }
 Category.getInitialProps = async (ctx) => {
-    const sectionNew = await getCategory(encodeURI(ctx.query.slug))
+    const sectionNew = await getCategory(ctx.query.slug)
     const sectionleft = await getleftCategory()
     return {
       category: sectionNew,
