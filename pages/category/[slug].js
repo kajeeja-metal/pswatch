@@ -53,7 +53,7 @@ class Category extends Component {
                                                     <div className="hashtag-group">
                                                         {
                                                             items.categories_group !== null && items.categories_group.map((items,i)=>{
-                                                            return <Link href={`/category/[slug]`} as={`/category/${items.slug}/`} key={i} passHref><a href="">{items.category_name}</a></Link>
+                                                            return <Link href={`/category/[slug]`} as={`/category/${items.slug}/`} key={i} passHref><a href=""><span>{items.category_name}</span></a></Link>
                                                             })
                                                         }
                                                     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  Router  from 'next/router'
 import Link from 'next/link';
 class Header extends Component {
     constructor(props) {
@@ -6,11 +7,17 @@ class Header extends Component {
         this.state = {
             menuIsOpen: false,
             dropdownIsOpen: false,
+            activeSlug: ''
         }
         this.openMenu = this.openMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
 
         this.toggleDropdown = this.toggleDropdown.bind(this);
+    }
+    componentDidMount(){
+        
+        this.setState({activeSlug:Router.pathname})
+        console.log(this.state.activeSlug)
     }
     toggleDropdown() {
         this.setState({ dropdownIsOpen: !this.state.dropdownIsOpen })
@@ -31,20 +38,21 @@ class Header extends Component {
         this.setState({ menuIsOpen: false })
     }
     render() {
+        console.log(this.state.activeSlug)
         return (
             <header>
                 <div className={`header_wrapper py-2 ` + (this.state.menuIsOpen ? 'menu-active' : '')}>
                     <div className="container">
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="logo">
-                                <img src="/static/images/Pjlogo.webp" />
+                            <Link href="/"><a href=""><img src="/static/images/Pjlogo.webp" /></a></Link>
                             </div>
-                            <div className="nav-wrapper">
-                                <Link href="/"><a href="" className="nav-item nav-item_active">HOME</a></Link>
-                                <Link href="/"><a href="" className="nav-item">นาฬิกามือสอง</a></Link>
-                                <Link href="/"><a href="" className="nav-item">รับซื้อนาฬิกาแบรนด์เนม</a></Link>
-                                <Link href="/"><a href="" className="nav-item">ABOUT US</a></Link>
-                                <Link href="/"><a href="" className="nav-item text-warning">Call 062-429-2968</a></Link>
+                            <div className="nav-wrapper ">
+                                <Link href="/"><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' nav-item_active ' :'')}>HOME</a></Link>
+                                <Link href="/"><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' ' :'')}>นาฬิกามือสอง</a></Link>
+                                <Link href="/brand-name"><a href="" className={`nav-item`+ (this.state.activeSlug == "/brand-name" ? ' nav-item_active ' :'')}>รับซื้อนาฬิกาแบรนด์เนม</a></Link>
+                                <Link href="/about-us"><a href="" className={`nav-item`+ (this.state.activeSlug == "/about-us" ? ' nav-item_active ' :'')}>ABOUT US</a></Link>
+                                <a href="callto:062-429-2968" className={`nav-item`}>Call 062-429-2968</a>
                                 <ul className="nav-wrapper_inner">
                                     <li>
                                         <Link href="/"><a href="" className="nav-item ">NEW ARRIVALS</a></Link>
