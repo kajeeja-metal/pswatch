@@ -53,43 +53,6 @@ class Brandname extends Component {
             )
           })
         }
-        <section className="group-brandName py-3">
-          <div className="container">
-            <div className="row justify-content-center">
-              <Link href="/">
-                <a href="" className="brandName-item col-6 col-lg-3">
-                  <img src="https://www.pj-watch.com/wp-content/uploads/2020/08/PJ-Watch-Panerai-Luminor-Base-8-Days-Acciaio.webp" />
-                  <h6>Marina 1950 3 Days</h6>
-                </a>
-              </Link>
-              <Link href="/">
-                <a href="" className="brandName-item col-6 col-lg-3">
-                  <img src="https://www.pj-watch.com/wp-content/uploads/2020/08/PJ-Watch-Panerai-Luminor-Base-8-Days-Acciaio.webp" />
-                  <h6>Marina 1950 3 Days</h6>
-                </a>
-              </Link>
-              <Link href="/">
-                <a href="" className="brandName-item col-6 col-lg-3">
-                  <img src="https://www.pj-watch.com/wp-content/uploads/2020/08/PJ-Watch-Panerai-Luminor-Base-8-Days-Acciaio.webp" />
-                  <h6>Marina 1950 3 Days</h6>
-                </a>
-              </Link>
-              <Link href="/">
-                <a href="" className="brandName-item col-6 col-lg-3">
-                  <img src="https://www.pj-watch.com/wp-content/uploads/2020/08/PJ-Watch-Panerai-Luminor-Base-8-Days-Acciaio.webp" />
-                  <h6>Marina 1950 3 Days</h6>
-                </a>
-              </Link>
-              <Link href="/">
-                <a href="" className="brandName-item col-6 col-lg-3">
-                  <img src="https://www.pj-watch.com/wp-content/uploads/2020/08/PJ-Watch-Panerai-Luminor-Base-8-Days-Acciaio.webp" />
-                  <h6>Marina 1950 3 Days</h6>
-                </a>
-              </Link>
-
-            </div>
-          </div>
-        </section>
       </Pages>: ''
     )
   }
