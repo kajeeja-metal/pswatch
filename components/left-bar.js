@@ -41,7 +41,7 @@ class Leftbar extends Component {
                                 <ul className="category-nav">
                                     {
                                         category.map((cat, i) => {
-                                            if(cat.id != 1 && cat.count != 0){
+                                            if(cat.id != 0 && cat.count != 0){
                                                 return (
                                                     <li  key={i}>
                                                         <Link href={`/category/[slug]`} as={`/category/${cat.slug}/`} passHref>
