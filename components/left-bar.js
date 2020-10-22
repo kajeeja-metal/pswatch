@@ -10,6 +10,8 @@ class Leftbar extends Component {
             tags: [],
             keyword : '',
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount = async () =>{
         const sectionNew = await getAlltags()
