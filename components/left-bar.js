@@ -7,12 +7,23 @@ class Leftbar extends Component {
         super(props)
         this.state = {
             category: this.props.sideber,
-            tags: []
+            tags: [],
+            keyword : '',
         }
     }
     componentDidMount = async () =>{
         const sectionNew = await getAlltags()
         this.setState({tags:sectionNew})
+    }
+    handleChange(e) {
+        this.setState({keyword: e.target.value});
+    }
+    handleSubmit(e) {
+        event.preventDefault();
+        Router.push({
+            pathname: '/search/'+this.state.keyword,
+            query: { name: this.state.keyword }
+        })
     }
     render() {
         const { category,tags } = this.state
