@@ -3,9 +3,8 @@ import Leftbar from '../../components/left-bar'
 import react, { Component } from "react"
 import Link from 'next/link';
 import  Router  from 'next/router'
-import { getPages } from '../../service/Pageservice'
-import { getCategory,getleftCategory } from '../../service/Productservice'
-class Category extends Component {
+import { getleftCategory,getSearch } from '../../service/Productservice'
+class Search extends Component {
     constructor(props){
         super(props)
     }
@@ -21,14 +20,14 @@ class Category extends Component {
         return { __html: rawMarkup };
     }
     render() {
-        const {category} = this.props
-        return (category != null ?
+        const {category,slug} = this.props
+         return (category.length != 0 ?
         <Pages>
             <section className="result-Category bg-white my-3">
             <div className="container">
                 <div className="row">
                 <div className="col-12 text-center">
-                    <h3 className="text-dark  py-2">CATEGORY: {category.name}</h3>
+                    <h3 className="text-dark  py-2">Search: {slug}</h3>
                 </div>
                 </div>
             </div>
@@ -40,7 +39,7 @@ class Category extends Component {
                         <section className="block-8">
                                 <div className="row new-product_group">
                                 {
-                                    category.items.length != 0 && category.items.map((items,i)=>{
+                                    category.length != 0 && category.map((items,i)=>{
                                     return (
                                     <div className={"mb-4 " + (i === 0 ? "col-md-12": "col-md-6")} key={i}>
                                         <div className="row">
@@ -78,7 +77,7 @@ class Category extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 text-center">
-                            <h3 className="text-dark  py-2">CATEGORY: ไม่มีหมวดหมู่ข้อมูล</h3>
+                            <h3 className="text-dark  py-2">SEACRH : ไม่มีหมวดหมู่ข้อมูล</h3>
                         </div>
                     </div>
                 </div>
@@ -100,12 +99,14 @@ class Category extends Component {
         )
     }
 }
-Category.getInitialProps = async (ctx) => {
-    const sectionNew = await getCategory(encodeURI(ctx.query.slug))
+Search.getInitialProps = async (ctx) => {
+
+    const sectionNew = await getSearch(ctx.query.slug)
     const sectionleft = await getleftCategory()
     return {
       category: sectionNew,
-      leftsideber: sectionleft
+      leftsideber: sectionleft,
+      slug:ctx.query.slug,
     }
   }
-export default Category
+export default Search

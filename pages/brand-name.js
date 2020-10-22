@@ -2,25 +2,57 @@ import Pages from '../layout/master'
 import Leftbar from '../components/left-bar'
 import react, { Component } from "react"
 import Link from 'next/link';
+import  Router  from 'next/router'
+import { getPages } from '../service/Pageservice'
+import { getFullCategory,getleftCategory } from '../service/Productservice'
 class Brandname extends Component {
   render() {
-    return (
+    const { post } = this.props
+    return (post !== null ?
       <Pages>
-        <section className="block-1 py-4" style={{ backgroundImage: 'url(https://www.pj-watch.com/wp-content/uploads/2020/07/372726-scaled.jpg)' }}>
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-images text-md-center mb-5 mb-lg-0 col-md-12 col-lg-5">
-                <img src="https://www.pj-watch.com/wp-content/uploads/2020/07/ร้านรับซื้อ-rolex-pj-watch.webp" />
+        {
+          post.map((items,i)=>{
+            return(
+              <>
+              <section className="block-1 py-4" style={{ backgroundImage: 'url('+items.bgImages+')' }}>
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-images text-md-center mb-5 mb-lg-0 col-md-12 col-lg-5">
+                      <img src="https://www.pj-watch.com/wp-content/uploads/2020/07/ร้านรับซื้อ-rolex-pj-watch.webp" />
+                    </div>
+                    <div className="col-content col-md-12 col-lg-7">
+                      <h2 className="mb-3 text-center text-lg-left text-warning">{items.name}</h2>
+                      <p className="mb-3">{items.description}</p>
+                      {/* <h2 className="mb-3 text-center text-lg-left text-warning">รับซื้อ Rolex รุ่นยอดนิยม</h2> */}
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section className="group-brandName py-3">
+              <div className="container">
+                <div className="row justify-content-center">
+                {
+                  items.items.length !== 0 ? 
+                  items.items.map((post,i)=>{
+                    return(
+                      <Link  href={`/blog/[slug]`} as={`/blog/${post.slug}/`} key={i} passHref>
+                        <a href="" className="brandName-item col-6 col-lg-3">
+                          <img src={post.images} />
+                          <h6>{post.title.plaintext}</h6>
+                        </a>
+                      </Link>
+                    )
+                  })
+                  :''
+                }
+                </div>
               </div>
-              <div className="col-content col-md-12 col-lg-7">
-                <h1 className="mb-3 text-center text-lg-left text-warning">รับซื้อนาฬิกา Rolex ของแท้ทุกรุ่น</h1>
-                <p className="mb-3">นาฬิกา Rolex ชื่อนี้โดดเด่นและเป็นเอกลักษณ์เฉพาะ เริ่มก่อตั้งมานานตั้งแต่ปี 1905 จนถึงปัจจุบัน ได้รับการออกแบบที่ปราณีต แบบฉบับของ Rolex ทั้งวัสดุที่เลือกใช้ละกรรมวิธีการผลิตต่างๆ ที่เรียกได้ว่า ของปลอมยังทำให้เหมือนได้ยากและไม่คุ้มที่จะลงทุน จนทำให้ใครต่อหลายคนอยากที่จับต้องเป็นผู้ครอบครอง อีกทั้งหากจะซื้อเพื่อเกร็งกำไรก็ทำได้ดีในตลาด ยิ่งบางรุ่นที่ Discontinue ด้วยแล้ว อนาคตราคาเพิ่มขึ้นอย่างแน่นอน</p>
-                <p className="mb-3">ท่านใดที่มีนาฬิกา Rolex อยู่แล้ว อยากจะขายหรือเช็คราคา หรือคำแนะนำอื่นๆสามารถสอบถามเราเข้ามาได้เลย</p>
-                <h2 className="mb-3 text-center text-lg-left text-warning">รับซื้อ Rolex รุ่นยอดนิยม</h2>
-              </div>
-            </div>
-          </div>
-        </section>
+              </section>
+              
+              </>
+            )
+          })
+        }
         <section className="group-brandName py-3">
           <div className="container">
             <div className="row justify-content-center">
@@ -58,10 +90,16 @@ class Brandname extends Component {
             </div>
           </div>
         </section>
-        
-
-      </Pages>
+      </Pages>: ''
     )
+  }
+}
+Brandname.getInitialProps = async (ctx) => {
+  const sectionNew = await getFullCategory()
+  const sectionleft = await getleftCategory()
+  return {
+    leftsideber: sectionleft,
+    post: sectionNew
   }
 }
 export default Brandname

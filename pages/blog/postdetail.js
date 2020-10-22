@@ -1,8 +1,8 @@
-import Pages from '../layout/master'
-import Leftbar from '../components/left-bar'
+import Pages from '../../layout/master'
+import Leftbar from '../../components/left-bar'
 import react, { Component } from "react"
 import Link from 'next/link';
-import { getleftCategory } from '../service/Productservice'
+import { getleftCategory } from '../../service/Productservice'
 class Postdetail extends Component {
     constructor(props){
         super(props)

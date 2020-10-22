@@ -774,7 +774,8 @@ function switch_homepage() {
 add_action( 'init', 'switch_homepage' );
 function prepare_restful_categories($data, $post, $context) {
     $_data = $data->data;
-    $_data['images'] = z_taxonomy_image_url($data->data['id'], 'medium');
+	$_data['images'] = z_taxonomy_image_url($data->data['id'], 'medium');
+	$_data['bgImages'] = Categories_Multiple_Images::get_image( $data->data['id'], 1, 'full', false );
     $data->data = $_data;
     return $data;
 }
@@ -811,7 +812,7 @@ function dt_use_raw_post_content( $data, $post, $request ) {
 	$categories = get_the_category( $_data['id'] );
 	$img_full = get_the_post_thumbnail_url( $data->ID, 'full' );
 	foreach ($categories as $category) {
-		if($category->cat_ID != 9){
+		if($category->cat_ID != 0){
 			$object = [
 				'id' => $category->cat_ID,
 				'category_name' => $category->name,
@@ -838,9 +839,40 @@ function wpse_58501_page_can_richedit( $can )
     return $can;
 }
 add_filter( 'rest_post_collection_params', 'my_prefix_add_rest_orderby_params', 10, 1 );
-
+add_filter( 'rest_category_collection_params', 'my_prefix_add_rest_orderby_params', 10, 1 );
 function my_prefix_add_rest_orderby_params( $params ) {
     $params['orderby']['enum'][] = 'menu_order';
 
     return $params;
 }
+
+function related_posts_endpoint( $request_data ) {
+
+    $post_id = $request_data['post_id'];
+
+    $uposts = get_posts(
+        array(
+            'post_type' => 'post',
+            'category__in'   => wp_get_post_categories($post_id),
+            'posts_per_page' => 3,
+            'post__not_in'   => array($post_id),
+        )
+	);
+	$add_featured_image = function( $uposts ) 
+	{
+		$image_id = get_post_thumbnail_id( $uposts );
+		$uposts->images = wp_get_attachment_url( $image_id, 'full' );
+		return $uposts;
+	};
+	$uposts = array_map( $add_featured_image, $uposts );
+    return  $uposts;
+}
+
+add_action( 'rest_api_init', function () {
+
+    register_rest_route( 'sections/v1', '/post/related/(?P<post_id>[\d]+)', array(
+            'methods' => 'GET',
+            'callback' => 'related_posts_endpoint'
+    ));
+
+});

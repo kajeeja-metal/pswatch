@@ -38,7 +38,8 @@ class Home extends Component {
                         <div className="col-md-6 align-self-center py-3">
                           <h2 className="mb-4" dangerouslySetInnerHTML={this.rawMarkupremove(items.excerpt.rendered)} />
                           <p className="mb-3" dangerouslySetInnerHTML={this.rawMarkupremove(items.title.plaintext)} />
-                          <button type="button" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</button>
+                          <Link href={`/blog/[slug]`} as={`/blog/${items.slug}/`} key={i} passHref><a href="" className="btn btn-warning"><span>ดูข้อมูลเพิ่มเติม</span></a></Link>
+                          
                         </div>
                       </div>
                     </div>)
