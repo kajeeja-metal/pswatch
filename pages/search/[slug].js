@@ -56,7 +56,7 @@ class Search extends Component {
                                                         }
                                                     </div>
                                                     <h2 className="mb-2" dangerouslySetInnerHTML={this.rawMarkupremove(items.title.rendered)}/>
-                                                    <div className="mb-3 block-descript" dangerouslySetInnerHTML={this.rawMarkupremove(items.content.plaintext)}/>
+                                                    {/* <div className="mb-3 block-descript" dangerouslySetInnerHTML={this.rawMarkupremove(items.content.plaintext)}/> */}
                                                     <Link href={`/blog/[slug]`} as={`/blog/${items.slug}/`} key={i} passHref>
                                                         <a href="" className="btn btn-warning">ดูข้อมูลเพิ่มเติม</a>
                                                     </Link>
