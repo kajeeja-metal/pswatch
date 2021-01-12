@@ -91,6 +91,9 @@ main {
         background-color: #fff;
         color: #000;
         text-align: center;
+        img{
+            height:auto !important;
+        }
         div.block-descript {
             @include ellipsis(3);
         }

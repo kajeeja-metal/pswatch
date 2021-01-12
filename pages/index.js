@@ -127,7 +127,7 @@ class Home extends Component {
                     <h4>เชื่อถือได้ 100% เรามีหน้าร้านที่ตั้งชัดเจน</h4>
                   </div>
                   <div className="col-md-12 text-center">
-                    <img src="https://www.pj-watch.com/wp-content/uploads/2020/07/PJ-WATCH-SHOP.webp" />
+                    <img src="/static/images/home.jpg" />
                     <h3 className="pt-4">ดูที่อยู่ร้านเราได้ที่นี้</h3>
                   </div>
                 </div>

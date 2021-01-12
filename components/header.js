@@ -45,7 +45,7 @@ class Header extends Component {
                             <div className="col-md-12">
                                 <div className="d-flex justify-content-between align-items-center">
                                 <div className="logo">
-                                <Link href="/"><a href=""><img src="/static/images/Pjlogo.webp" /></a></Link>
+                                <Link href="/"><a href=""><img src="/static/images/logo.jpg" style={{width:'30%'}} /></a></Link>
                                 </div>
                                 <div className="nav-wrapper ">
                                     <Link href="/"><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' nav-item_active ' :'')}>HOME</a></Link>
