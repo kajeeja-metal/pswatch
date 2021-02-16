@@ -14,7 +14,7 @@ class Category extends Component {
     }
     rawMarkupremove(e){
         var rawMarkup = e
-        return { __html: rawMarkup.replace(/\n/g, '') };
+        return { __html: rawMarkup.replace(/(<\/?(?:a|p|img)[^>]*>)|<[^>]+>/ig, '') };
     }
     rawMarkup(detail) {
         var rawMarkup = detail
@@ -35,7 +35,7 @@ class Category extends Component {
             </section>
             <div className="container">
                 <div className="row result-Category_wrapper">
-                    <Leftbar sideber={this.props.leftsideber} />
+                    <Leftbar sideber={this.props.leftsideber}  PlugIn={this.props.PlugInsideber} />
                     <div className="col-md-12 col-lg-9 px-0">
                         <section className="block-8">
                                 <div className="row new-product_group">
@@ -86,7 +86,7 @@ class Category extends Component {
             </section>
             <div className="container">
                     <div className="row result-Category_wrapper">
-                        <Leftbar sideber={this.props.leftsideber} />
+                        <Leftbar sideber={this.props.leftsideber} PlugIn={this.props.PlugInsideber} />
                         <div className="col-md-12 col-lg-9 px-0">
                             <section className="block-8">
                             <div className="detail-product p-5">
@@ -102,10 +102,12 @@ class Category extends Component {
 }
 Category.getInitialProps = async (ctx) => {
     const sectionNew = await getCategory(encodeURI(ctx.query.slug))
+    const sectionPlug = await getPages(217)
     const sectionleft = await getleftCategory()
     return {
       category: sectionNew,
-      leftsideber: sectionleft
+      leftsideber: sectionleft,
+      PlugInsideber: sectionPlug,
     }
   }
 export default Category

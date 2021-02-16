@@ -1,6 +1,7 @@
 import Pages from '../../layout/master'
 import Leftbar from '../../components/left-bar'
 import react, { Component } from "react"
+import { getPages } from '../../service/Pageservice'
 import Link from 'next/link';
 import { getleftCategory,getPostfind } from '../../service/Productservice'
 class Postdetail extends Component {
@@ -22,7 +23,7 @@ class Postdetail extends Component {
             <Pages>
                 <div className="container">
                     <div className="row postdetail_wrapper">
-                        <Leftbar sideber={this.props.leftsideber}/>
+                        <Leftbar sideber={this.props.leftsideber}  PlugIn={this.props.PlugInsideber}/>
                         <div className="col-md-12 col-lg-8 px-0">
                             <section className="block-8">
                                 <div className="container">
@@ -43,17 +44,6 @@ class Postdetail extends Component {
                                                         </div>
                                                         <h2 className="mb-2" dangerouslySetInnerHTML={this.rawMarkupremove(post.title.rendered)}/>
                                                         <div className="mb-3  text-left" dangerouslySetInnerHTML={this.rawMarkupremove(post.content.plaintext)}/>
-                                                    </div>
-                                                    <div className="postdetail_nav-links">
-                                                        <div className="postdetail_nav-links_wrapper">
-
-                                                            <Link href="/">
-                                                                <a href="" className="col-6 nav-previous">Rolex Sea Dweller 4000ft ขอบฟิล์ม</a>
-                                                            </Link>
-                                                            <Link href="/">
-                                                                <a href="" className="col-6 nav-next">BVLGARI Octo Finissimo Extra Thin Manual-winding Skeleton Dial Black Ceramic Men’s Watch</a>
-                                                            </Link>
-                                                        </div>
                                                     </div>
                                                     <div className="related-posts">
                                                         <div className=" text-center">
@@ -92,10 +82,12 @@ class Postdetail extends Component {
 }
 Postdetail.getInitialProps = async (ctx) => {
     const sectionNew = await getPostfind(encodeURI(ctx.query.slug))
+    const sectionPlug = await getPages(217)
     const sectionleft = await getleftCategory()
     return {
       leftsideber: sectionleft,
-      post: sectionNew
+      post: sectionNew,
+      PlugInsideber: sectionPlug,
     }
   }
 export default Postdetail

@@ -45,13 +45,13 @@ class Header extends Component {
                             <div className="col-md-12">
                                 <div className="d-flex justify-content-between align-items-center">
                                 <div className="logo">
-                                <Link href="/"><a href=""><img src="/static/images/Pjlogo.webp" /></a></Link>
+                                <Link href="/"><a href=""><img src="/static/images/PSWatch.png" style={{maxWidth:'50%'}}/></a></Link>
                                 </div>
                                 <div className="nav-wrapper ">
-                                    <Link href="/"><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' nav-item_active ' :'')}>HOME</a></Link>
+                                    <Link href="/"><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' nav-item_active ' :'')}>หน้าแรก</a></Link>
                                     <Link href={`/category/[slug]`} as={`/category/นาฟิกามือสอง/`} passHref><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' ' :'')}>นาฬิกามือสอง</a></Link>
                                     <Link href="/brand-name"><a href="" className={`nav-item`+ (this.state.activeSlug == "/brand-name" ? ' nav-item_active ' :'')}>รับซื้อนาฬิกาแบรนด์เนม</a></Link>
-                                    <Link href="/about-us"><a href="" className={`nav-item`+ (this.state.activeSlug == "/about-us" ? ' nav-item_active ' :'')}>ABOUT US</a></Link>
+                                    <Link href="/about-us"><a href="" className={`nav-item`+ (this.state.activeSlug == "/about-us" ? ' nav-item_active ' :'')}>เกี่ยวกับเรา</a></Link>
                                     <a href="callto:062-429-2968" className={`nav-item`}>Call 062-429-2968</a>
                                     <ul className="nav-wrapper_inner">
                                         <li>

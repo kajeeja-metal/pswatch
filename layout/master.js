@@ -10,7 +10,7 @@ class Pages extends Component{
         return(
         <>
         <Head>
-            <title>PJ Watch</title>
+            <title>PS Watch</title>
             <link rel="icon" href="/favicon.png" />
             <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet"></link>
           <link

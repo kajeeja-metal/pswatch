@@ -9,7 +9,7 @@ body {
 main {
     min-height: calc(100vh - 132px);
     position: relative;
-    margin-top: 76px;
+    margin-top: 117px;
     background-color: #0b0b0b;
     color: #fff;
 }
@@ -46,6 +46,9 @@ main {
     .poppular-group {
         height: fit-content;
     }
+    br{
+        display: none !important;
+    }
 }
 .block-7 {
     .group-icon {
@@ -64,6 +67,9 @@ main {
         }
     }
     .hashtag-group {
+        br{
+            display: none !important;
+        }
         span {
             color: #dd5252;
             cursor: pointer;
@@ -91,6 +97,20 @@ main {
         background-color: #fff;
         color: #000;
         text-align: center;
+        .mb-3{
+            display: flex;
+            flex-wrap: wrap;
+            img{
+                margin-bottom: 5px;
+                object-fit: cover;
+                height: 50%;
+                padding: 7.5px;
+                column-fill: 3;
+                width: 50%;
+                
+            }
+        }
+        
         div.block-descript {
             @include ellipsis(3);
         }
@@ -109,10 +129,12 @@ main {
             transform: translate(-50%, 0);
             width: 50%;
         }
+        
         a{
             text-decoration: none;
             color: #dd5252;
             cursor: pointer;
+            display: inline-block;
             font-size: 14px;
             &:hover {
                 color: #e02a2a;
@@ -320,6 +342,7 @@ main {
         height: 70px;
     }
 }
+
 @media (max-width: 767px) {
     h1 {
         font-size: 1.5rem;

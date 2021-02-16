@@ -9,7 +9,7 @@ class Footer extends Component {
             <footer>
                 <div className="footer_wrapper">
                     <div className="container text-center py-3">
-                    <p>&copy;{new Date().getFullYear()} PJ-Watch.com. All Rights Reserved.</p>
+                    <p>&copy;{new Date().getFullYear()} PS-Watch.com. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
