@@ -69,12 +69,6 @@ class Header extends Component {
                                                 <li><Link href="/"><a href="" className="dd-menu_item">สายนาฬิกา Patek</a></Link></li>
                                             </ul>
                                         </li>
-                                        <li>
-                                            <Link href="/"><a href="" className="nav-item">Audemars Piguet</a></Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/"><a href="" className="nav-item ">Breitling</a></Link>
-                                        </li>
                                     </ul>
                                 </div>
                                 <div className="icon-menu_wrapper ">
