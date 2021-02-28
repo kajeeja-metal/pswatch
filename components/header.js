@@ -52,7 +52,7 @@ class Header extends Component {
                                     <Link href={`/category/[slug]`} as={`/category/นาฟิกามือสอง/`} passHref><a href="" className={`nav-item`+ (this.state.activeSlug == "/" ? ' ' :'')}>นาฬิกามือสอง</a></Link>
                                     <Link href="/brand-name"><a href="" className={`nav-item`+ (this.state.activeSlug == "/brand-name" ? ' nav-item_active ' :'')}>รับซื้อนาฬิกาแบรนด์เนม</a></Link>
                                     <Link href="/about-us"><a href="" className={`nav-item`+ (this.state.activeSlug == "/about-us" ? ' nav-item_active ' :'')}>เกี่ยวกับเรา</a></Link>
-                                    <a href="callto:062-429-2968" className={`nav-item`}>Call 062-429-2968</a>
+                                    <a href="callto:063-991-1115" className={`nav-item`}>Call 063-991-1115</a>
                                     <ul className="nav-wrapper_inner">
                                         <li>
                                             <Link href="/"><a href="" className="nav-item ">NEW ARRIVALS</a></Link>
